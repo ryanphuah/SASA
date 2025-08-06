@@ -30,3 +30,7 @@ The following line can be run for the test files provided
 python sasa.py -i 1ec1_complex_lastframe.pdb -c 1ec1_clustercenterfile.pdb -r 0
 ```
 Do note the -r flag is used to specify type of SASA calculated (absolute vs relative). Relative SASA outputs a value between 0 (fully buried) and 1 (fully exposed). Reference output files are labelled _ref.pdb for both cases.
+
+## Caveats
+- The pymol function used for -r 0 (get_area) has not been validated very well according to pymol documentation. This may have led to some reported values larger than the total surface areas of a single water molecule (~30A<sup>2</sup>)
+- This script could not be combined with HSA due to separate python versions being used
