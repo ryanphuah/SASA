@@ -12,7 +12,7 @@ def hsa(input_pdb,cluster_file,relative):
     cmd.load(cluster_file,'waters')
     numwat=cmd.count_atoms('waters')
     cmd.flag(25,'None')
-    if relative:
+    if relative==1:
         for i in range(0,numwat):
             cmd.select('resn wat and id '+str(i))
             cmd.copy_to('complex','sele')
